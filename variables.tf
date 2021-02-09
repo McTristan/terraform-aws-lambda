@@ -59,7 +59,7 @@ variable "role_policy_arns_count" {
 
 variable "role_policy_arns" {
   description = "List of policy ARNs to attach to Lambda role"
-  type        = list
+  type        = list[string]
 }
 
 
@@ -90,13 +90,13 @@ variable "env_vars" {
 variable "subnet_ids" {
   default     = []
   description = "List of subnet IDs for Lambda VPC config (leave empty if no VPC)"
-  type        = list
+  type        = list[string]
 }
 
 variable "security_group_ids" {
   default     = []
   description = "List of security group IDs for Lambda VPC config (leave empty if no VPC)"
-  type        = list
+  type        = list[string]
 }
 
 variable "cloudwatch_logs_retention_days" {
@@ -108,13 +108,13 @@ variable "cloudwatch_logs_retention_days" {
 variable "source_types" {
   default     = []
   description = "List of sources for Lambda triggers; order must match source_arns"
-  type        = list
+  type        = list[string]
 }
 
 variable "source_arns" {
   default     = []
   description = "List of arns for Lambda triggers; order must match source_types"
-  type        = list
+  type        = list[string]
 }
 
 variable "handler" {
