@@ -78,13 +78,13 @@ variable "timeout" {
 variable "tags" {
   default     = {}
   description = "Map of tags for Lambda function"
-  type        = map
+  type        = map(string)
 }
 
 variable "env_vars" {
   default     = {}
   description = "Map of environment variables for Lambda function"
-  type        = map
+  type        = map(string)
 }
 
 variable "subnet_ids" {
